@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {Alert, StyleSheet, Text, TouchableNativeFeedback, View } from 'react-native';
+import Main from './src/components/Main';
+// component Text => EL UNICO PARA TEXTO
+// component View => PARA CREAR CUALQUIER INTERFAZ, COMPORTAMIENTO COMO CONTENEDOR FLEXBOX
+// component Touch => COMPONENTES/BUTTONS PARA APRETAR 
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+  <Main></Main>
+
+  )
+
+  
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

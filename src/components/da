@@ -1,0 +1,28 @@
+// export default Main  
+// import React from 'react';
+// import Constants from 'expo-constants';
+// import { StyleSheet, Text, View } from 'react-native';
+
+
+// // component Text => EL UNICO PARA TEXTO
+// // component View => PARA CREAR CUALQUIER INTERFAZ, COMPORTAMIENTO COMO CONTENEDOR FLEXBOX
+// // component Touch => COMPONENTES/BUTTONS PARA APRETAR 
+
+// const style = StyleSheet.create({
+//     header:{
+//         flex:1},
+//         center:{justifyContent:center, backgroundColor: "powderblue" },
+//         left:{alignSelf:left,backgroundColor: "skyblue" },
+//         right:{alignSelf:right,backgroundColor: "steelblue"}
+// })
+
+// const Main = () => { 
+//     return (
+//         <View style={{flexDirection:column}}>
+//         <View style={style.left}></View>
+//         <Text> Market APP Beta </Text> 
+//         <View style={style.center} />
+//         <View style={style.right} />
+//         </View>
+//     )
+// }
