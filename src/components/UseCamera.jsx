@@ -1,23 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button,TextInput} from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
-export default function App() {
+export default function UseCamera({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
-
+  const [text,setText] = useState("")
+  const lista = []
   useEffect(() => {
     const getBarCodeScannerPermissions = async () => {
       const { status } = await BarCodeScanner.requestPermissionsAsync();
       setHasPermission(status === 'granted');
     };
-
     getBarCodeScannerPermissions();
   }, []);
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    if(lista.filter((item =>{ item === data })) == undefined){
+      alert(`This bar code ${data} has actually in your database!`);  
+    }else{
+      alert(`This product is NEW, do you want SAVE?`)
+      navigation.navigate('ProductDetail')
+    }    
   };
 
   if (hasPermission === null) {
@@ -45,3 +50,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
